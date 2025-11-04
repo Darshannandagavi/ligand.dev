@@ -1,0 +1,155 @@
+.chapter-container {
+
+  margin: 0 auto;
+  padding: 30px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #ffffff;
+}
+
+.chapter-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-header h1 {
+  margin: 0 0 15px 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.chapter-subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin: 0;
+}
+
+.content-section {
+  margin-bottom: 50px;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.content-section h2 {
+  color: #2c3e50;
+  margin-top: 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e9ecef;
+  font-size: 1.8rem;
+}
+
+.agenda-list {
+  counter-reset: agenda-counter;
+  padding-left: 0;
+}
+
+.agenda-list > li {
+  list-style: none;
+  margin-bottom: 15px;
+  padding-left: 40px;
+  position: relative;
+  font-size: 1.1rem;
+}
+
+.agenda-list > li::before {
+  counter-increment: agenda-counter;
+  content: counter(agenda-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.step {
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.step:last-child {
+  border-bottom: none;
+}
+
+.step h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  font-size: 1.4rem;
+}
+
+.step h4 {
+  color: #3498db;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.step p, .step li {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #495057;
+}
+
+.code-block {
+  position: relative;
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  overflow-x: auto;
+  font-family: 'Consolas', 'Monaco', monospace;
+  line-height: 1.5;
+}
+
+.code-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.image-placeholder {
+  margin: 20px 0;
+  overflow: hidden;
+  padding: 30px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  text-align: center;
+  border: 2px dashed #a0a0a0;
+}
+
+.image-placeholder p {
+  margin: 0;
+  color: #7f8c8d;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .chapter-header h1 {
+    font-size: 2rem;
+  }
+  
+  .content-section {
+    padding: 20px;
+  }
+  
+  .chapter-container {
+    padding: 20px 15px;
+  }
+  
+  .agenda-list > li {
+    padding-left: 30px;
+  }
+}
+
+.home-work h2{
+  padding:6px 12px;
+  background-color:#3498db;
+  color:white;     
+}

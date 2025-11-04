@@ -1,0 +1,150 @@
+
+.notes-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.notes-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eaeaea;
+}
+
+.notes-header h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.company-info {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.company-info h2 {
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.step-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-3px);
+}
+
+.step-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.code-block {
+  position: relative;
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 5px;
+  margin: 15px 0;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.code-block code {
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.copy-btn:hover {
+  background-color: #2980b9;
+}
+
+.copy-btn.copied {
+  background-color: #27ae60;
+}
+
+.image-placeholder {
+  margin: 15px 0;
+  padding: 15px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.image-container {
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #e0e0e0;
+  border: 2px dashed #a0a0a0;
+  border-radius: 5px;
+}
+
+.step-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.notes-footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid #eaeaea;
+  text-align: center;
+  color: #7f8c8d;
+}
+
+@media (max-width: 768px) {
+  .notes-container {
+    padding: 15px;
+  }
+  
+  .step-card {
+    padding: 15px;
+  }
+}
+.home-work{
+  margin-top: 20px;
+}
+.home-work h2{
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color:white;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
