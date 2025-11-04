@@ -19,7 +19,12 @@ import feeGroupRoutes from "./routes/feeGroupRoutes.js";
 
 const app = express();
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors({
+  origin: "https://liganddevelopers.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 
