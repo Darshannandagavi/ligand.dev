@@ -14,7 +14,7 @@ const ItemBackend = () => {
       title: "Item Model (models/Item.js)",
       content: "The Item model defines the structure for item data in the database.",
       explanation: "This model specifies what fields an item document should have, their data types, and any validation rules. It includes timestamps for automatic creation and update tracking.",
-      image: "/create itemjs.png",
+      image: "/create itemjs.png", // keep only this one
       code: `import mongoose from "mongoose";
 
 const itemSchema = new mongoose.Schema(
@@ -48,7 +48,6 @@ const itemSchema = new mongoose.Schema(
 
 const Item = mongoose.model("Item", itemSchema);
 export { Item };`,
-      image: "/create itemjs.png",
       breakdown: [
         "itemName: String field for the item name, required and trimmed",
         "itemImage: String field to store image filename or path, required",
