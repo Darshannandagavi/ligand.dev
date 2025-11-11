@@ -176,7 +176,7 @@ export default function AdminPaymentsDashboard() {
     } finally { setLoading(false); }
   };
 
-  useEffect(() => { load(); }, []);
+  useEffect(() => { load(); }, [load]);
 
   return (
     <div style={styles.container}>
