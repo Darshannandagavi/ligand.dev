@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import "./InterviewPage.css";
 
-const API_BASE = "https://ligand-software-solutions-workshop-2.onrender.com/api"; // backend base URL
+const API_BASE = "https://ligand-software-solutions-workshop-2.onrender.com/api"; 
 const GROQ_API_KEY = process.env.REACT_APP_GROQ_API_KEY || "";
 if (!GROQ_API_KEY) {
   console.warn("REACT_APP_GROQ_API_KEY is not set. Groq API calls will fail.");
