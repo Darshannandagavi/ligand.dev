@@ -40,25 +40,27 @@ export default function AttendExam() {
     if (collegeName) fetchExams();
   }, [collegeName]);
 
-  useEffect(() => {
-    if (!selectedExam || submitted) return;
+useEffect(() => {
+  if (!selectedExam || submitted) return;
 
-    if (timeLeft <= 0) {
-      handleAutoSubmit();
-      return;
-    }
+  if (timeLeft <= 0) {
+    handleAutoSubmit();
+    return;
+  }
 
-    if (timeLeft <= 10 && !alertShown) {
-      alert("Only 10 seconds remaining!");
-      setAlertShown(true);
-    }
+  if (timeLeft <= 10 && !alertShown) {
+    alert("Only 10 seconds remaining!");
+    setAlertShown(true);
+  }
 
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => prev - 1);
-    }, 1000);
+  const timer = setInterval(() => {
+    setTimeLeft((prev) => prev - 1);
+  }, 1000);
 
-    return () => clearInterval(timer);
-  }, [timeLeft, selectedExam, submitted, alertShown]);
+  return () => clearInterval(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [timeLeft, selectedExam, submitted, alertShown]);
+
 
   useEffect(() => {
     if (selectedExam && !submitted) {
@@ -74,6 +76,7 @@ export default function AttendExam() {
       });
     }
     setIsFullScreen(true);
+    if (isFullScreen) console.log('Full screen active');
   };
 
   const exitFullScreen = () => {
