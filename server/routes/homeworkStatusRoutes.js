@@ -1,5 +1,5 @@
 import express from "express";
-import { getStudentHomeworkStatus, updateHomeworkStatus } from "../controllers/homeworkstatuscontroller";
+import { getStudentHomeworkStatus, updateHomeworkStatus } from "../controllers/homeworkstatuscontroller.js";
 
 
 
