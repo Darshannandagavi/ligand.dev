@@ -15,7 +15,7 @@ const ManageTeachers = () => {
   const loadTeachers = async () => {
     try {
       setLoading(true);
-      const res = await axios.get("http://localhost:8000/api/teacher");
+      const res = await axios.get("https://ligand-software-solutions-workshop-2.onrender.com/api/teacher");
       setTeachers(res.data);
       setFilteredTeachers(res.data);
     } catch (err) {

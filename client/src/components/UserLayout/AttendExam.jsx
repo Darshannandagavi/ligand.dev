@@ -29,7 +29,7 @@ export default function AttendExam() {
         console.log(studentId);
         setLoading((prev) => ({ ...prev, exams: true }));
         const res = await axios.get(
-          `http://localhost:8000/api/exams/foruser/${collegeName}/${studentId}`
+          `https://ligand-software-solutions-workshop-2.onrender.com/api/exams/foruser/${collegeName}/${studentId}`
         );
         console.log(res.data);
         setExams(res.data.exams || []);

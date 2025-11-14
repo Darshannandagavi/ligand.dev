@@ -20,7 +20,7 @@ import homeworkstatusRouter from "./routes/homeworkStatusRoutes.js";
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-  origin: ["https://ligand-software-solutions-workshop-2.onrender.com", "http://localhost:3000"],
+  origin: "https://ligand-software-solutions-workshop-2.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));

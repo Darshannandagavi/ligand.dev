@@ -36,9 +36,9 @@ const TeacherHomework = () => {
   const [activeFilters, setActiveFilters] = useState(0);
   const [saving, setSaving] = useState(false);
 
-  const API_ASSIGNMENTS = "http://localhost:8000/api/assignments";
+  const API_ASSIGNMENTS = "https://ligand-software-solutions-workshop-2.onrender.com/api/assignments";
   const API_STUDENTS =
-    "http://localhost:8000/api/attendance/students/forteacher";
+    "https://ligand-software-solutions-workshop-2.onrender.com/api/attendance/students/forteacher";
 
   // Count active filters
   useEffect(() => {
@@ -51,7 +51,7 @@ const TeacherHomework = () => {
   // 📚 Load Colleges
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/options/collegeName")
+      .get("https://ligand-software-solutions-workshop-2.onrender.com/api/options/collegeName")
       .then((res) => setCollegeOptions(res.data || []))
       .catch(() => toast.error("Failed to load colleges"));
   }, []);
@@ -65,7 +65,7 @@ const TeacherHomework = () => {
     }
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/attendance/options/batches", {
+      .get("https://ligand-software-solutions-workshop-2.onrender.com/api/attendance/options/batches", {
         params: { collegeName },
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -81,7 +81,7 @@ const TeacherHomework = () => {
     }
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/attendance/options/programs", {
+      .get("https://ligand-software-solutions-workshop-2.onrender.com/api/attendance/options/programs", {
         params: { collegeName, batch },
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -97,7 +97,7 @@ const TeacherHomework = () => {
     }
     const token = localStorage.getItem("token");
     axios
-      .get("http://localhost:8000/api/attendance/options/technologies", {
+      .get("https://ligand-software-solutions-workshop-2.onrender.com/api/attendance/options/technologies", {
         params: { collegeName, batch, programName },
         headers: { Authorization: `Bearer ${token}` },
       })
@@ -194,7 +194,7 @@ const TeacherHomework = () => {
     };
 
     try {
-      await axios.post("http://localhost:8000/api/homeworkstatus", payload);
+      await axios.post("https://ligand-software-solutions-workshop-2.onrender.com/api/homeworkstatus", payload);
       toast.success("Homework status updated successfully!");
       fetchStudents(); // Reload latest data
     } catch (err) {
@@ -554,7 +554,7 @@ const TeacherHomework = () => {
                         <img
                           src={
                             s.profilePic
-                              ? `http://localhost:8000/uploads/${s.profilePic}`
+                              ? `https://ligand-software-solutions-workshop-2.onrender.com/uploads/${s.profilePic}`
                               : "/default_user.jpeg"
                           }
                           alt={s.name}
