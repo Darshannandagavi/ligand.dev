@@ -406,7 +406,14 @@ const TeacherHomework = () => {
           </div>
 
           {/* Homework Statistics */}
-          {selectedHomework && students.length > 0 && (
+          
+        </div>
+
+        {/* Student List */}
+        <div className="student-list-section card">
+          <div className="page-header">
+            <div className="header-content">
+              {selectedHomework && students.length > 0 && (
             <div className="homework-stats">
               <h4>Homework Progress</h4>
               <div className="stats-grid">
@@ -425,16 +432,6 @@ const TeacherHomework = () => {
               </div>
             </div>
           )}
-        </div>
-
-        {/* Student List */}
-        <div className="student-list-section card">
-          <div className="page-header">
-            <div className="header-content">
-              <div className="header-title">
-                <FaBook className="header-icon" />
-                <h1>Homework Management</h1>
-              </div>
               <div className="header-stats">
                 <div className="stat-card">
                   <span className="stat-number">{students.length}</span>
