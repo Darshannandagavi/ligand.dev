@@ -20,14 +20,12 @@ import homeworkstatusRouter from "./routes/homeworkStatusRoutes.js";
 const app = express();
 app.use(bodyParser.json());
 app.use(cors({
-  origin: "https://developersligand.vercel.app",
+  origin: "https://liganddevelopers.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
-
-
 
 dotenv.config();
 const PORT = process.env.PORT || 7000;
