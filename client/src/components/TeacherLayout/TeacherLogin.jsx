@@ -106,9 +106,7 @@ const TeacherLogin = () => {
       <div className="login-card">
         {/* Header Section */}
         <div className="login-header">
-          <div className="header-icon">
-            <FaUserGraduate />
-          </div>
+          
           <div className="header-content">
             <h1>Welcome Back</h1>
             <p>Sign in to your teacher account</p>
