@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import { Link } from "react-router-dom";
 import {
   FaEnvelope,
   FaLock,
@@ -10,6 +10,7 @@ import {
   FaUserPlus,
   FaUnlock,
   FaHourglassHalf,
+  FaUserAlt,
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -131,25 +132,30 @@ const Login = () => {
           </form>
 
           <div
-            className="forgot-password"
-            data-aos="fade-in"
-            data-aos-delay="250"
-          >
-            <a href="/ForgotPassword">
-              <FaUnlock className="icon" /> Forgot Password?
-            </a>
-          </div>
+  className="forgot-password"
+  data-aos="fade-in"
+  data-aos-delay="250"
+>
+  <Link to="/ForgotPassword">
+    <FaUnlock className="icon" /> Forgot Password?
+  </Link>
+</div>
 
-          <div
-            className="register-redirect"
-            data-aos="fade-in"
-            data-aos-delay="300"
-          >
-            Don't have an account?{" "}
-            <a href="/register">
-              <FaUserPlus className="icon" /> Sign up here
-            </a>
-          </div>
+<div
+  className="register-redirect"
+  data-aos="fade-in"
+  data-aos-delay="300"
+>
+  Don't have an account?{" "}
+  <Link to="/register">
+    <FaUserPlus className="icon" /> Sign up here
+  </Link>
+
+  <Link to="/teacher-login" style={{ marginTop: "20px" }}>
+    <FaUserAlt className="icon" /> Are you a teacher?
+  </Link>
+</div>
+          
         </div>
      
 
