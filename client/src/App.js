@@ -50,6 +50,7 @@ import TeacherLogin from "./components/TeacherLayout/TeacherLogin";
 import Homework from "./components/AdminLayout/Homework";
 import TeacherHomework from "./components/TeacherLayout/TeacherHomeWork";
 import TeacherForgot from "./components/TeacherLayout/TeacherForgot";
+import AdminApproveStudents from "./components/AdminLayout/AdminApproveStudents";
 
 function App() {
   return (
@@ -63,6 +64,9 @@ function App() {
           <Route path="/teacher-login" element={<TeacherLogin />} />
           <Route path="teacher-forgot-pwd" element={<TeacherForgot />} />
         </Route>
+
+
+
 
         <Route path="/user" element={<UserLayout />}>
           <Route index element={<AttendExam />} />
@@ -93,6 +97,9 @@ function App() {
           <Route path="/user/interview" element={<InterviewPage />} />
         </Route>
 
+
+
+
         <Route path="/admin" element={<AdminLayout />}>
           <Route index element={<ManageExam />} />
           <Route path="/admin/exam" element={<ManageExam />} />
@@ -121,7 +128,13 @@ function App() {
           <Route path="/admin/add-teacher" element={<TeacherRegister />} />
           <Route path="/admin/manage-teacher" element={<ManageTeachers />} />
           <Route path="/admin/student/homework" element={<Homework />} />
+          <Route path="/admin/student/approve" element={<AdminApproveStudents />} />
         </Route>
+
+
+
+
+
 
         <Route path="/teacher" element={<TeacherLayout />}>
           <Route path="/teacher/students" element={<TeacherStudent />} />

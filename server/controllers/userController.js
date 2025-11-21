@@ -62,6 +62,10 @@ export const login = async (req, res) => {
     const validPass = await bcrypt.compare(password, user.password);
     if (!validPass) return res.status(400).json({ error: "Invalid password" });
 
+    if (user.role === "student" && !user.isApproved) {
+      return res.status(403).json({ error: "Your account is not approved yet" });
+    }
+
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET, {
       expiresIn: "1d",
     });
@@ -254,6 +258,63 @@ export const makeBatchPassout = async (req, res) => {
       modifiedCount: result.modifiedCount ?? 0,
       message: `${result.modifiedCount ?? 0} users marked as passout`,
     });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+
+
+
+// ADMIN: Approve / Unapprove a student
+export const toggleApproval = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { isApproved } = req.body;
+
+    const updatedUser = await User.findByIdAndUpdate(
+      id,
+      { $set: { isApproved } },   // update ONLY this field
+      { new: true, runValidators: false } // don't revalidate whole user
+    );
+
+    if (!updatedUser)
+      return res.status(404).json({ error: "User not found" });
+
+    res.json({
+      message: `Student marked as ${isApproved ? "Approved" : "Unapproved"}`,
+      user: updatedUser
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+
+export const approveByDate = async (req, res) => {
+  try {
+    const { date } = req.body;
+
+    if (!date)
+      return res.status(400).json({ error: "Date is required" });
+
+    const start = new Date(date);
+    const end = new Date(date);
+    end.setHours(23, 59, 59, 999);
+
+    const result = await User.updateMany(
+      {
+        role: "student",
+        createdAt: { $gte: start, $lte: end }
+      },
+      { $set: { isApproved: true } }
+    );
+
+    res.json({
+      message: `${result.modifiedCount} students approved for ${date}`,
+      modifiedCount: result.modifiedCount
+    });
+
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

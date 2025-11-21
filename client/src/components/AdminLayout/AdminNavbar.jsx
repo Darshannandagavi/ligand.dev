@@ -44,8 +44,13 @@ const AdminNavbar = () => {
      
       icon: FaChartBar,
       
-       dropdown: "Students",
+      dropdown: "Students",
       links: [
+        {
+          name: "Approve Students",
+          to: "/admin/student/approve",
+          icon: FaUser
+        },
         {
           name: "Students",
           to: "/admin/dashboard",

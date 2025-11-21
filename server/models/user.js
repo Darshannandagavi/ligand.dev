@@ -51,6 +51,8 @@ const userSchema = new mongoose.Schema(
     },
     // ✅ Add homework tracking
     homeworkStatus: [homeworkStatusSchema],
+    isApproved: { type: Boolean, default: false }
+
   },
   { timestamps: true }
 );
