@@ -270,7 +270,7 @@ export default function AdminApproveStudents() {
   // Fetch all students
   const fetchStudents = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/api/users", {
+      const res = await axios.get("https://ligand-dev-7.onrender.com/api/users", {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -327,7 +327,7 @@ export default function AdminApproveStudents() {
     setActionLoading(id);
     try {
       await axios.put(
-        `http://localhost:8000/api/users/approve/${id}`,
+        `https://ligand-dev-7.onrender.com/api/users/approve/${id}`,
         { isApproved: value },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -350,7 +350,7 @@ export default function AdminApproveStudents() {
 
     try {
       const res = await axios.put(
-        "http://localhost:8000/api/users/approve-by-date",
+        "https://ligand-dev-7.onrender.com/api/users/approve-by-date",
         { date: selectedDate },
         { headers: { Authorization: `Bearer ${token}` } }
       );
