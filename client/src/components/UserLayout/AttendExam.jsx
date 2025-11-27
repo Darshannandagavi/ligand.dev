@@ -22,6 +22,9 @@ export default function AttendExam() {
   const studentId = localStorage.getItem("userId");
   const studentName = localStorage.getItem("username") || "Student";
   const collegeName = localStorage.getItem("collegeName");
+  // camera state + ref
+const [cameraStream, setCameraStream] = useState(null);
+const videoRef = React.useRef(null);
 
   useEffect(() => {
     async function fetchExams() {
@@ -41,6 +44,23 @@ export default function AttendExam() {
     }
     if (collegeName) fetchExams();
   }, [collegeName]);
+  useEffect(() => {
+  if (cameraStream && videoRef.current) {
+    try {
+      videoRef.current.srcObject = cameraStream;
+      // ensure playback starts
+      const playPromise = videoRef.current.play();
+      if (playPromise && typeof playPromise.then === "function") {
+        playPromise.catch((e) => {
+          // autoplay might be blocked — that's okay since video is muted
+          console.warn("Video play prevented:", e);
+        });
+      }
+    } catch (e) {
+      console.error("Error attaching camera stream to video element:", e);
+    }
+  }
+}, [cameraStream]);
 
   useEffect(() => {
     if (!selectedExam || submitted) return;
@@ -96,23 +116,37 @@ export default function AttendExam() {
   };
 
   const startExam = async (exam) => {
-    try {
-      setLoading((prev) => ({ ...prev, examStart: true }));
-      setSelectedExam(exam);
-      setAnswers({});
-      setSubmitted(false);
-      setResult(null);
-      setTimeLeft(exam.duration || 1800);
-      setCurrentQuestion(0);
-      setReviewQuestions([]);
-      setTimeoutMessage("");
-      setAlertShown(false);
-    } catch (error) {
-      console.error("Error starting exam:", error);
-    } finally {
-      setLoading((prev) => ({ ...prev, examStart: false }));
-    }
-  };
+  try {
+    // ask for camera permission first
+    setLoading((prev) => ({ ...prev, examStart: true }));
+    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+    // store stream (this will not cause flicker)
+    setCameraStream(stream);
+
+    // optional: quick success alert
+    alert("Camera access granted. Starting exam...");
+
+    // now initialize exam state
+    setSelectedExam(exam);
+    setAnswers({});
+    setSubmitted(false);
+    setResult(null);
+    setTimeLeft(exam.duration || 1800);
+    setCurrentQuestion(0);
+    setReviewQuestions([]);
+    setTimeoutMessage("");
+    setAlertShown(false);
+
+    // enter fullscreen handled by existing effect when selectedExam set
+  } catch (err) {
+    console.error("Camera permission error:", err);
+    alert("Camera access is required to start the exam. Please allow camera and try again.");
+  } finally {
+    setLoading((prev) => ({ ...prev, examStart: false }));
+  }
+};
+
 
   const handleAnswerChange = (qId, optionIndex) => {
     setAnswers({ ...answers, [qId]: optionIndex });
@@ -130,6 +164,14 @@ export default function AttendExam() {
   const goToQuestion = (index) => {
     setCurrentQuestion(index);
   };
+const stopCamera = () => {
+  if (cameraStream) {
+    cameraStream.getTracks().forEach((t) => t.stop());
+    setCameraStream(null);
+  }
+};
+
+// call stopCamera inside backToList
 
   const handleSubmit = async () => {
     try {
@@ -154,6 +196,7 @@ export default function AttendExam() {
       setResult(res.data.attempt);
       setSubmitted(true);
       exitFullScreen();
+      stopCamera();
     } catch (err) {
       console.error("Error submitting exam:", err);
       alert("Error submitting exam!");
@@ -162,12 +205,13 @@ export default function AttendExam() {
     }
   };
 
-  const backToList = () => {
-    setSelectedExam(null);
-    setSubmitted(false);
-    setResult(null);
-    exitFullScreen();
-  };
+ const backToList = () => {
+  setSelectedExam(null);
+  setSubmitted(false);
+  setResult(null);
+  exitFullScreen();
+  stopCamera();
+};
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
@@ -180,6 +224,13 @@ export default function AttendExam() {
   const formatMinutes = (seconds) => {
     return `${Math.floor(seconds / 60)} minutes`;
   };
+  useEffect(() => {
+  return () => {
+    // component unmount: stop camera
+    stopCamera();
+  };
+}, []);
+
 
   if (loading.exams) {
     return (
@@ -428,6 +479,7 @@ export default function AttendExam() {
               font-size: 2rem;
             }
           }
+            
         `}</style>
       </div>
     );
@@ -477,6 +529,18 @@ export default function AttendExam() {
   return (
     <div id="exam-container" className="fullscreen-exam">
       <div className="exam-topbar">
+        {cameraStream && (
+  <div className="camera-box" aria-hidden="true" style={{height:"100px",width:"180px",borderRadius:"20px"}}>
+    <video
+      ref={videoRef}
+      autoPlay
+      playsInline
+      muted
+      style={{ width: "100%", height: "100%", objectFit: "cover",borderRadius:"10px" }}
+    />
+  </div>
+)}
+
         <div className="exam-title">
           <h4>
             {selectedExam.examTitle || `Exam #${selectedExam.examNumber}`}

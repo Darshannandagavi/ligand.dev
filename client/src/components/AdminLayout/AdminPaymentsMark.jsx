@@ -413,7 +413,7 @@ export default function AdminPaymentsMark() {
         return np;
       });
     } catch (err) {
-      console.error(err);
+      console.error(err.response.data.error);
       alert("Error submitting payment");
     } finally {
       setActionLoading(false);

@@ -452,7 +452,7 @@ export const recordPayment = async (req, res) => {
     });
 
     if (!studentEntry)
-      return res.status(404).json({ error: "Student not found in group" });
+      return res.status(404).json({ error: "Student not found in any group" });
 
     // Ensure numeric values
     studentEntry.totalFee = Number(studentEntry.totalFee || 0);

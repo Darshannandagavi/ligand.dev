@@ -1,5 +1,3 @@
-import logo from "./logo.svg";
-import "./App.css";
 import GuestLayout from "./components/GuestLAyout/GuestLayout";
 import { Route, Routes } from "react-router-dom";
 import Login from "./components/GuestLAyout/Login";
@@ -66,6 +64,7 @@ function App() {
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/teacher-login" element={<TeacherLogin />} />
           <Route path="teacher-forgot-pwd" element={<TeacherForgot />} />
+          
         </Route>
 
 
