@@ -1,6 +1,13 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-import { FaHome, FaUserPlus, FaBars, FaTimes, FaSignOutAlt } from 'react-icons/fa';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import {
+  FaHome,
+  FaUserPlus,
+  FaBars,
+  FaTimes,
+  FaSignOutAlt,
+  FaChartBar,
+} from "react-icons/fa";
 import { PiStudentFill } from "react-icons/pi";
 
 const TeacherNavbar = () => {
@@ -17,87 +24,104 @@ const TeacherNavbar = () => {
         <div className="navbar-brand">
           <NavLink to="/" className="brand-link">
             <div className="logo-container">
-              <img 
+              <img
                 src="/logo2.jpg" // Replace with your logo path
                 alt="Ligand Software Solutions Logo"
                 className="logo-image"
               />
               <span className="logo-text-container">
-                <span className="logo-gradient">Ligand Software Solutions (Teacher)</span>
-                <span className="logo-subtitle">Exclusive Software for Innnovative Minds</span>
+                <span className="logo-gradient">
+                  Ligand Software Solutions (Teacher)
+                </span>
+                <span className="logo-subtitle">
+                  Exclusive Software for Innnovative Minds
+                </span>
               </span>
             </div>
           </NavLink>
         </div>
 
         {/* Mobile menu button */}
-        <button 
-          className={`navbar-toggle ${isOpen ? 'active' : ''}`}
+        <button
+          className={`navbar-toggle ${isOpen ? "active" : ""}`}
           onClick={toggleNavbar}
           aria-label="Toggle navigation"
         >
-          {isOpen ? <FaTimes className="toggle-icon" /> : <FaBars className="toggle-icon" />}
+          {isOpen ? (
+            <FaTimes className="toggle-icon" />
+          ) : (
+            <FaBars className="toggle-icon" />
+          )}
         </button>
 
         {/* Navigation links */}
-        <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
+        <div className={`navbar-menu ${isOpen ? "active" : ""}`}>
           <div className="navbar-nav">
+            <NavLink
+              to="/teacher"
+              end
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              <FaHome className="nav-icon" />
+              <span>Home</span>
+            </NavLink>
             <NavLink 
-  to="/teacher" 
-  end
-  className={({ isActive }) => 
-    `nav-link ${isActive ? 'active' : ''}`
-  }
-  onClick={() => setIsOpen(false)}
->
-  <FaHome className="nav-icon" />
-  <span>Home</span>
-</NavLink>
-            <NavLink 
-              to="/teacher/change-password" 
+              to="/teacher/markattendance" 
               className={({ isActive }) => 
                 `nav-link ${isActive ? 'active' : ''}`
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              <FaChartBar className="nav-icon" />
+              <span>Attendance</span>
+            </NavLink>
+            <NavLink
+              to="/teacher/change-password"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
               }
               onClick={() => setIsOpen(false)}
             >
               <FaUserPlus className="nav-icon" />
               <span>Change Password</span>
             </NavLink>
-            <NavLink 
-              to="/teacher/edit-profile" 
-              className={({ isActive }) => 
-                `nav-link ${isActive ? 'active' : ''}`
+            <NavLink
+              to="/teacher/edit-profile"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
               }
               onClick={() => setIsOpen(false)}
             >
               <FaUserPlus className="nav-icon" />
               <span>Edit Profile</span>
             </NavLink>
-            <NavLink 
-              to="/teacher/students" 
-              className={({ isActive }) => 
-                `nav-link ${isActive ? 'active' : ''}`
+            <NavLink
+              to="/teacher/students"
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
               }
               onClick={() => setIsOpen(false)}
             >
-              <PiStudentFill  className="nav-icon" />
+              <PiStudentFill className="nav-icon" />
               <span>EStudents</span>
             </NavLink>
             <NavLink
-  to="/"
-  end
-  className={({ isActive }) => 
-    `nav-link ${isActive ? 'active' : ''}`
-  }
-  onClick={() => {
-    localStorage.clear(); // ✅ Clear everything on logout
-    setIsOpen(false);
-  }}
->
-  <FaSignOutAlt className="nav-icon" />
-  <span>Log-out</span>
-</NavLink>
-
+              to="/"
+              end
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              onClick={() => {
+                localStorage.clear(); // ✅ Clear everything on logout
+                setIsOpen(false);
+              }}
+            >
+              <FaSignOutAlt className="nav-icon" />
+              <span>Log-out</span>
+            </NavLink>
           </div>
         </div>
       </div>
@@ -114,7 +138,7 @@ const TeacherNavbar = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-         
+
           margin: 0 auto;
         }
 
@@ -256,7 +280,7 @@ const TeacherNavbar = () => {
           .navbar {
             padding: 0.6rem 1rem;
           }
-          
+
           .navbar-toggle {
             display: flex;
             align-items: center;
@@ -325,7 +349,7 @@ const TeacherNavbar = () => {
           .logo-gradient {
             font-size: 1.1rem;
           }
-          
+
           .logo-subtitle {
             font-size: 0.65rem;
           }
@@ -364,5 +388,3 @@ const TeacherNavbar = () => {
 };
 
 export default TeacherNavbar;
-
-

@@ -52,6 +52,7 @@ import AdminApproveStudents from "./components/AdminLayout/AdminApproveStudents"
 import CreateAppPassword from "./components/UserLayout/CreateAppPassword";
 import NoteForgotChangePassword from "./components/UserLayout/NoteForgotChangePassword";
 import ProfileNotes from "./components/UserLayout/ProfileNotes";
+import TeacherAttendance from "./components/TeacherLayout/TeacherAttendance";
 
 function App() {
   return (
@@ -145,6 +146,10 @@ function App() {
           <Route path="/teacher/students" element={<TeacherStudent />} />
           <Route index element={<TeacherHomework />} />
           <Route path="/teacher/homeworks" element={<TeacherHomework />} />
+          <Route
+            path="/teacher/markattendance"
+            element={<TeacherAttendance />}
+          />
           <Route
             path="/teacher/change-password"
             element={<TeacherChangePassword />}
