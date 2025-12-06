@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaSignInAlt, FaBars, FaTimes, FaBook } from "react-icons/fa";
-import { MdOutlinePublishedWithChanges } from "react-icons/md";
+import { MdOutlinePublishedWithChanges, MdOutlineSpaceDashboard } from "react-icons/md";
 import { TbHistoryToggle } from "react-icons/tb";
 import { FaLaptopCode } from "react-icons/fa";
 
@@ -50,6 +50,19 @@ const UserNavbar = () => {
         {/* Navigation links */}
         <div className={`navbar-menu ${isOpen ? "active" : ""}`}>
           <div className="navbar-nav">
+
+            <NavLink
+              to="/user/analytics"
+              end
+              className={({ isActive }) =>
+                `nav-link ${isActive ? "active" : ""}`
+              }
+              onClick={() => setIsOpen(false)}
+            >
+              <MdOutlineSpaceDashboard className="nav-icon" />
+              <span>Dashboard</span>
+            </NavLink>
+
             <NavLink
               to="/user"
               end

@@ -12,10 +12,13 @@ import {
   FaUser,
   FaObjectGroup,
   
+  
 } from "react-icons/fa";
+import { GiProgression } from "react-icons/gi";
+
 import { AiFillControl } from "react-icons/ai";
 import { RiSettings4Fill } from "react-icons/ri";
-import { MdOutlinePublishedWithChanges } from "react-icons/md";
+import { MdDelete, MdOutlinePublishedWithChanges } from "react-icons/md";
 import { TbHistoryToggle } from "react-icons/tb";
 import { FaLaptopCode, FaMoneyCheck, FaChartBar, FaFileInvoiceDollar } from "react-icons/fa";
 
@@ -60,6 +63,16 @@ const AdminNavbar = () => {
           name: "Attendance",
           to: "/admin/attendance",
           icon: FaChartBar
+        },
+        {
+          name: "Student Progress",
+          to: "/admin/getstudentprogress",
+          icon: GiProgression
+        },
+        {
+          name: "Delete Students",
+          to: "/admin/deletestudents",
+          icon: MdDelete
         },
        
       ]
