@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
 
-const API = "http://localhost:8000/api";
+const API = "https://ligand-dev-7.onrender.com/api";
 
 // ----------------------------------------------------------
 // SAFE GET

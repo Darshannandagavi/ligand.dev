@@ -399,20 +399,57 @@ const AdminPayments = () => {
 
   // Load students
   const loadStudents = async () => {
-    if (!collegeName || !batch || !programName || !technology) return alert('Select all filters');
-    try {
-      const res = await axios.get('https://ligand-dev-7.onrender.com/api/attendance/students', { 
-        params: { collegeName, batch, programName, technology }, 
-        headers: { Authorization: token ? `Bearer ${token}` : '' } 
+  if (!collegeName || !batch || !programName || !technology)
+    return alert("Select all filters");
+
+  try {
+    // 1) Fetch ALL students based on filters
+    const res = await axios.get(
+      "https://ligand-dev-7.onrender.com/api/attendance/students",
+      {
+        params: { collegeName, batch, programName, technology },
+        headers: { Authorization: token ? `Bearer ${token}` : "" }
+      }
+    );
+    const allStudents = res.data || [];
+
+    // 2) Fetch existing fee groups for same filters
+    const groupsRes = await axios.get(
+      "https://ligand-dev-7.onrender.com/api/fee-groups",
+      {
+        params: { collegeName, batch, programName, technology },
+        headers: { Authorization: token ? `Bearer ${token}` : "" }
+      }
+    );
+
+    const groups = groupsRes.data || [];
+
+    // 3) Collect IDs of students already in groups
+    const assignedIds = new Set();
+
+    groups.forEach(group => {
+      group.students.forEach(entry => {
+        assignedIds.add(String(entry.student?._id || entry.student));
       });
-      setStudents(res.data || []);
-      setSelected(new Set());
-      setFees({});
-    } catch (err) { 
-      console.error(err); 
-      alert('Failed to load students'); 
-    }
-  };
+    });
+
+    console.log("Already assigned students:", assignedIds);
+
+    // 4) Filter out assigned students
+    const filteredStudents = allStudents.filter(
+      s => !assignedIds.has(String(s._id))
+    );
+
+    setStudents(filteredStudents);
+    setSelected(new Set());
+    setFees({});
+
+  } catch (err) {
+    console.error(err);
+    alert("Failed to load students");
+  }
+};
+
 
   // Load fee summary
   const [summary, setSummary] = useState(null);

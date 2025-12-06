@@ -6,7 +6,7 @@ import html2canvas from "html2canvas";
 window.jspdf = { jsPDF };
 window.html2canvas = html2canvas;
 
-const API = "http://localhost:8000/api";
+const API = "https://ligand-dev-7.onrender.com/api";
 
 // Custom API hook with error handling
 const useApi = () => {

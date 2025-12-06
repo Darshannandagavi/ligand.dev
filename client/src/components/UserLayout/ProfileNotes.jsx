@@ -421,7 +421,7 @@ import {
   Spinner
 } from 'react-bootstrap';
 
-const API_BASE = "http://localhost:8000/api/users";
+const API_BASE = "https://ligand-dev-7.onrender.com/api/users";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);

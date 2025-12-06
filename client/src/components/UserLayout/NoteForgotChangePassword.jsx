@@ -622,7 +622,7 @@
 // import axios from "axios";
 // import { Container, Row, Col, Form, Button, Alert, Spinner, Card } from "react-bootstrap";
 
-// const API_BASE = "http://localhost:8000/api/users";
+// const API_BASE = "https://ligand-dev-7.onrender.com/api/users";
 
 // export default class ForgotPassword extends React.Component {
 //   state = {
@@ -709,7 +709,7 @@
 // import axios from "axios";
 // import { Container, Row, Col, Form, Button, Alert, Spinner, Card } from "react-bootstrap";
 
-// const API_BASE = "http://localhost:8000/api/users";
+// const API_BASE = "https://ligand-dev-7.onrender.com/api/users";
 
 // export default class ChangePassword extends React.Component {
 //   state = {
@@ -1723,7 +1723,7 @@ export default UserRouter;`,
 import axios from "axios";
 import { Container, Row, Col, Form, Button, Alert, Spinner, Card } from "react-bootstrap";
 
-const API_BASE = "http://localhost:8000/api/users";
+const API_BASE = "https://ligand-dev-7.onrender.com/api/users";
 
 export default class ForgotPassword extends React.Component {
   state = {
@@ -1810,7 +1810,7 @@ export default class ForgotPassword extends React.Component {
 import axios from "axios";
 import { Container, Row, Col, Form, Button, Alert, Spinner, Card } from "react-bootstrap";
 
-const API_BASE = "http://localhost:8000/api/users";
+const API_BASE = "https://ligand-dev-7.onrender.com/api/users";
 
 export default class ChangePassword extends React.Component {
   state = {

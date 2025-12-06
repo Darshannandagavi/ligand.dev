@@ -12,7 +12,18 @@ const studentFeeSchema = new mongoose.Schema({
   paidFee: { type: Number, default: 0 },   // keeps increasing
   currentFee: { type: Number, default: 0 }, // totalFee - paidFee
   status: { type: String, enum: ["Pending", "Paid"], default: "Pending" },
-  paymentHistory: { type: [paymentHistorySchema], default: [] }
+  paymentHistory: [
+  {
+    amount: Number,
+    by: { type: mongoose.Schema.Types.ObjectId, ref: "Admin" },
+    paidOn: Date,
+    paymentMode: { type: String, enum: ["cash", "online"], default: "cash" },
+    transactionId: { type: String, default: "" },
+    receipt: { type: String, default: "" }, // store filename
+    remark: { type: String, default: "" }
+  }
+]
+
 }, { _id: false });
 
 const feeGroupSchema = new mongoose.Schema({

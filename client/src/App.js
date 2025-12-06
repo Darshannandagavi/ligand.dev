@@ -56,6 +56,7 @@ import TeacherAttendance from "./components/TeacherLayout/TeacherAttendance";
 import StudentDelete from "./components/AdminLayout/StudentDelete";
 import AdminStudentDashboard from "./components/AdminLayout/AdminStudentDashboard";
 import StudentAnalytics from "./components/UserLayout/StudentAnalytics";
+import StudentGroupingPage from "./components/AdminLayout/StudentGroupingPage";
 
 function App() {
   return (
@@ -129,6 +130,7 @@ function App() {
           <Route path="/admin/admindashboard" element={<AdminNewDashboard />} />
           <Route path="/admin/adminoptions" element={<AdminOptions />} />
           <Route path="/admin/history" element={<AdminExamAttempts />} />
+          <Route path="/admin/groupedstudents" element={<StudentGroupingPage />} />
           <Route path="/admin/changepassword" element={<ChangePassword />} />
           <Route
             path="/admin/manageexamsvisibility"
