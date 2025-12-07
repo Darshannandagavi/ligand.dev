@@ -3252,8 +3252,9 @@ export default function AdminPaymentsMark() {
         .admin-payments-modal-content {
           position: relative;
           background: white;
-          
-          
+          border-radius: 25px;
+          width:70%;
+          max-width: 95vw;
           max-height: 90vh;
           overflow-y: auto;
           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
@@ -3276,6 +3277,7 @@ export default function AdminPaymentsMark() {
           padding: 30px;
           background: linear-gradient(135deg, #667eea, #764ba2);
           color: white;
+          border-radius: 25px 25px 0 0;
           display: flex;
           justify-content: space-between;
           align-items: flex-start;
