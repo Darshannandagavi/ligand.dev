@@ -22,7 +22,7 @@ const ViewItemFrontendNotes = () => {
       title: "Create new file called ViewItem.jsx in UserLayout folder",
       content: "",
       explanation: "",
-      image: "/viewitem file craetions.png",
+      image: "/viewitemfilecraetions.png",
     },
     {
       title: "Complete ViewItem Component Code",
@@ -510,7 +510,7 @@ export default ViewItem;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/home work emp frontend.png"
+                      src="/homework/home_work_emp_frontend.png"
                       alt="Employee Card Design"
                     />
                   </div>
@@ -520,7 +520,7 @@ export default ViewItem;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/home work emp frontend1.png"
+                      src="/homework/home_work_emp_frontend1.png"
                       alt="Employee Modal Design"
                     />
                   </div>

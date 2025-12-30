@@ -640,7 +640,7 @@ reportWebVitals();`,
               <div className="materials-grid">
                 <div className="material-item">
                   <img
-                    src="/homework/homework user setup.png"
+                    src="/homework/homework_user_setup.png"
                     alt="User Layout Example"
                   />
                   <p>Example User Layout Structure</p>

@@ -176,7 +176,7 @@ export default App;`,
         <div className="image-placeholder">
           <div className="image-container">
             <img
-              src="/homeWork/homework Client Setup .png"
+              src="/homeWork/homework_Client_Setup.png"
               alt="client setup homework"
               className="step-image"
             />

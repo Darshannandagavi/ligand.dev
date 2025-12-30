@@ -213,7 +213,7 @@ const LoginFrontend = () => {
       title: "Step 1: Create Login Component",
       content: "Create new file Login.jsx file in components folder",
       explanation: "This file will contain the login form component that allows users to authenticate and access their accounts.",
-      image: "/Create Login Component.png"
+      image: "/CreateLoginComponent.png"
     },
     {
       title: "Complete Login Component Code",

@@ -943,7 +943,7 @@ return <h1>Hello, {name}!</h1>;`}</pre>
             <p>Example Image:</p>
             <div className="image-container">
               <img
-                src="/homework/homework  regisiterfrom.png"
+                src="/homework/homework_regisiterfrom.png"
                 alt="Registration Form Example"
                 className="step-image"
               />
