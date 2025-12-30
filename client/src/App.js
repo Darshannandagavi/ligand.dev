@@ -128,6 +128,7 @@ function App() {
           />
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/admindashboard" element={<AdminNewDashboard />} />
+          <Route path="/admin/interviewcontrller" element={<InterviewControl />} />
           <Route path="/admin/adminoptions" element={<AdminOptions />} />
           <Route path="/admin/history" element={<AdminExamAttempts />} />
           <Route path="/admin/groupedstudents" element={<StudentGroupingPage />} />

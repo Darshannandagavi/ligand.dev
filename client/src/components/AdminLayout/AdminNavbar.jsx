@@ -9,6 +9,7 @@ import {
   FaChevronUp,
   FaUser,
   FaObjectGroup,
+  FaRobot,
 } from "react-icons/fa";
 import { GiProgression } from "react-icons/gi";
 
@@ -131,6 +132,11 @@ const AdminNavbar = () => {
           name: "Manage Exams",
           to: "/admin/exam",
           icon: FaBook
+        },
+        {
+          name: "Interview Controller",
+          to: "/admin/interviewcontrller",
+          icon: FaRobot
         },
         {
           name: "Access Control",

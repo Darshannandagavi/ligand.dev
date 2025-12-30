@@ -342,7 +342,7 @@ const Chapter3 = () => {
         {
           subtitle: "Flow of Data in a MERN Stack Application:",
           image: {
-            src: ("/flowof data.png"),
+            src: ("/flowofdata.png"),
             caption: "Sample MERN Stack Syllabus Overview"
           },
           list: {
