@@ -2527,7 +2527,7 @@ export default GuestLayout;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/homework_landing_page.png"
+                      src="/homeWork/homework_landing_page.png"
                       alt="Landing Page Example 1"
                     />
                   </div>
@@ -2536,7 +2536,7 @@ export default GuestLayout;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/homework_landing_page2.png"
+                      src="/homeWork/homework_landing_page2.png"
                       alt="Landing Page Example 2"
                     />
                   </div>

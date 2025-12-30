@@ -390,7 +390,7 @@ export default Items;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/home_work_emp_fileds.png"
+                      src="/homeWork/home_work_emp_fileds.png"
                       alt="Employee Form Design"
                     />
                   </div>
@@ -400,7 +400,7 @@ export default Items;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/home_work_emp_output.png"
+                      src="/homeWork/home_work_emp_output.png"
                       alt="Employee Table Design"
                     />
                   </div>

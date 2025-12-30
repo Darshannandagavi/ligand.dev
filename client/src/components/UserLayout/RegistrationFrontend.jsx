@@ -1302,7 +1302,7 @@ export default Register;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/home_login_page.png"
+                      src="/homeWork/home_login_page.png"
                       alt="Login Page Example 1"
                     />
                   </div>

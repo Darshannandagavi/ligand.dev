@@ -510,7 +510,7 @@ export default ViewItem;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/home_work_emp_frontend.png"
+                      src="/homeWork/home_work_emp_frontend.png"
                       alt="Employee Card Design"
                     />
                   </div>
@@ -520,7 +520,7 @@ export default ViewItem;`,
                 <div className="reference-item">
                   <div className="image-container">
                     <img
-                      src="/homework/home_work_emp_frontend1.png"
+                      src="/homeWork/home_work_emp_frontend1.png"
                       alt="Employee Modal Design"
                     />
                   </div>
