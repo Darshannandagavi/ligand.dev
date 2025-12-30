@@ -386,8 +386,20 @@ export default Items;`,
                 </li>
                 <li>Add proper error handling and loading states</li>
                 <li>Make the design responsive and user-friendly</li>
-                <li>Connect with the Employee backend API endpoints</li>
+                <li>Connect with the Employee backend API endpoint</li>
               </ul>
+            </div>
+            <div style={{ margin: "35px 0" }}>
+              <iframe
+                width="100%"
+                height="515"
+                src="https://www.youtube.com/embed/fh5xkzS58h0"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: "8px" }}
+              ></iframe>
             </div>
 
             <div className="reference-section">
@@ -415,7 +427,7 @@ export default Items;`,
                 </div>
               </div>
 
-              <div
+              {/* <div
                 style={{
                   position: "relative",
                   width: "100%",
@@ -467,7 +479,7 @@ export default Items;`,
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div className="api-endpoints-section">
