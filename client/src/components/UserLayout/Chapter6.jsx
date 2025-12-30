@@ -2388,30 +2388,16 @@ export default App;`,
         </p>
 
         <div className="code-block">
-          <pre>{`import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
+          <pre>{`import { Outlet, Link } from "react-router-dom";
+import GuestHeader from "./GuestHeader";
+import GuestFooter from "./GuestFooter";
 
 const GuestLayout = () => {
   return (
     <>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand as={Link} to="/">EventPro</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link as={Link} to="/home">Home</Nav.Link>
-              <Nav.Link as={Link} to="/about">About</Nav.Link>
-              <Nav.Link as={Link} to="/services">Services</Nav.Link>
-              <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <Outlet />
+      <div style={{position:"fixed",top:"0",width:"100%",zIndex:"100"}}><GuestHeader /></div>
+      <div style={{minHeight:"100vh",marginTop:"80px"}}><Outlet /></div>
+      <GuestFooter />
     </>
   );
 };
@@ -2423,30 +2409,16 @@ export default GuestLayout;`}</pre>
             }`}
             onClick={() =>
               copyToClipboard(
-                `import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import Container from 'react-bootstrap/Container';
+                `import { Outlet } from "react-router-dom";
+import GuestHeader from "./GuestHeader";
+import GuestFooter from "./GuestFooter";
 
 const GuestLayout = () => {
   return (
     <>
-      <Navbar bg="light" expand="lg">
-        <Container>
-          <Navbar.Brand as={Link} to="/">EventPro</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link as={Link} to="/home">Home</Nav.Link>
-              <Nav.Link as={Link} to="/about">About</Nav.Link>
-              <Nav.Link as={Link} to="/services">Services</Nav.Link>
-              <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <Outlet />
+      <div style={{position:"fixed",top:"0",width:"100%",zIndex:"100"}}><GuestHeader /></div>
+      <div style={{minHeight:"100vh",marginTop:"80px"}}><Outlet /></div>
+      <GuestFooter />
     </>
   );
 };
@@ -2607,7 +2579,7 @@ export default GuestLayout;`,
                     userSelect: "none",
                   }}
                 >
-                 Create Landing Pages
+                  Create Landing Pages
                 </div>
               </div>
             </div>

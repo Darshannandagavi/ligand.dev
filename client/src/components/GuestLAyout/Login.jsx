@@ -51,7 +51,7 @@ const Login = () => {
 
       setMessage({ text: "Login successful! Redirecting...", type: "success" });
       if(res.data.user.role==="admin")navigate("/admin/admindashboard")
-      else navigate("/user")
+      else navigate("/user/analytics")
     } catch (err) {
       setMessage({
         text: err.response?.data?.error || "Login failed",

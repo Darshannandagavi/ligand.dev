@@ -49,7 +49,7 @@ const Items = () => {
   }, []);
 
   const fetchItems = async () => {
-    const response = await axios.get("https://ligand-software-solutions-workshop-2.onrender.com/item");
+    const response = await axios.get("http://localhost:8000/item");
     setItems(response.data.items);
     console.log(response.data);
   };
@@ -74,12 +74,12 @@ const Items = () => {
       let response;
       if (isEditMode) {
         response = await axios.put(
-          \`https://ligand-software-solutions-workshop-2.onrender.com/item/\${itemId}\`,
+          \`http://localhost:8000/item/\${itemId}\`,
           formData,
           { headers: { "Content-Type": "multipart/form-data" } }
         );
       } else {
-        response = await axios.post("https://ligand-software-solutions-workshop-2.onrender.com/item", formData, {
+        response = await axios.post("http://localhost:8000/item", formData, {
           headers: { "Content-Type": "multipart/form-data" },
         });
       }
@@ -119,7 +119,7 @@ const Items = () => {
     if (!confirmDelete) return;
 
     try {
-      const res = await axios.delete(\`https://ligand-software-solutions-workshop-2.onrender.com/item/\${id}\`);
+      const res = await axios.delete(\`http://localhost:8000/item/\${id}\`);
       setItems(items.filter((item) => item._id !== id));
       alert(res.data.message);
     } catch (error) {
@@ -223,7 +223,7 @@ const Items = () => {
 
               <td>
                 <img
-                  src={\`https://ligand-software-solutions-workshop-2.onrender.com/uploads/\${item.itemImage}\`}
+                  src={\`http://localhost:8000/uploads/\${item.itemImage}\`}
                   alt={item.itemName}
                   width="50"
                 />
@@ -267,6 +267,13 @@ export default Items;`,
         <p>Sankeshwar</p>
         <p>8722585715</p>
         <p>www.ligandsoftware.com</p>
+      </div>
+
+      <div className="reference-item">
+        <div className="image-container">
+          <img src="/homeWork/Itemfilepath.png" alt="itam file path image" />
+        </div>
+        <p>Employee Table Design</p>
       </div>
 
       <div className="steps-container">
@@ -460,7 +467,6 @@ export default Items;`,
                     }}
                   />
                 </div>
-
               </div>
             </div>
 

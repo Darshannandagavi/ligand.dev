@@ -390,7 +390,40 @@ export const loginUser = async (req, res) => {
     res.status(500).json({ message: "Login failed ❌", error: error.message });
   }
 };`,
+
       explanations: [
+        {
+          title: "WARNING",
+          content: [
+            <div>
+              <h2 style={{color:"red"}}>WARNING – MUST READ</h2>
+              <br />
+              <br />
+              <b>
+                Do NOT keep a space between the dollar sign and curly braces.
+              </b>
+              <br />
+              <b>❌ Do not use:</b> $ {"{ user.name }"}
+              <br />
+              <b>✅ Use:</b> {"${user.name}"}
+              <br />
+              <br />
+              <b>The HTML email content MUST be wrapped using backticks.</b>
+              <br />
+              <b>Backtick symbol:</b> {"`"}
+              <br />
+              <b>(The key below Esc, NOT single quote)</b>
+              <br />
+              <br />
+              <b>Start the backtick before the first &lt;p&gt; tag</b>
+              <br />
+              <b>End the backtick after the last &lt;/p&gt; tag</b>
+              <br />
+              <br />
+              <b>If you ignore this, JavaScript / React WILL throw errors.</b>
+            </div>
+          ],
+        },
         {
           title: "Export",
           content: [
@@ -725,13 +758,17 @@ export default UserRouter;`,
 
       <div className="home-work step-card">
         <h2 style={{ color: "white" }}>Home-Work</h2>
-        <p>🧠 Homework Task: Try another one type this in your another folder structure.</p>
+        <p>
+          🧠 Homework Task: Try another one type this in your another folder
+          structure.
+        </p>
         <br />
         <p>
-          🎯 Objective: Practice creating the same backend setup again in a new folder structure to understand model, controller, router connections and postman testing clearly.
+          🎯 Objective: Practice creating the same backend setup again in a new
+          folder structure to understand model, controller, router connections
+          and postman testing clearly.
         </p>
       </div>
-
 
       <div style={styles.companyInfo}>
         <h2 style={styles.companyH2}>LIGAND SOFTWARE SOLUTIONS</h2>
