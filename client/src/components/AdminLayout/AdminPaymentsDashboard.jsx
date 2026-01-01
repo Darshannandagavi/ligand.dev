@@ -113,6 +113,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Loader from '../StyleComponents/Loader';
 
 export default function AdminPaymentsDashboard() {
   const [collegeOptions, setCollegeOptions] = useState([]);
@@ -254,10 +255,7 @@ export default function AdminPaymentsDashboard() {
 
       {/* Summary Section */}
       {loading ? (
-        <div style={styles.loadingContainer}>
-          <div style={styles.spinner}></div>
-          <p style={styles.loadingText}>Loading payment summary...</p>
-        </div>
+        <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
       ) : summary ? (
         <div style={styles.summaryContainer}>
           {/* Overview Card */}

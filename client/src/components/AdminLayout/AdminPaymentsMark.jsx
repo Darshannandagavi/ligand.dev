@@ -1824,6 +1824,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../StyleComponents/Loader";
 
 export default function AdminPaymentsMark() {
   const [collegeOptions, setCollegeOptions] = useState([]);
@@ -2301,10 +2302,7 @@ export default function AdminPaymentsMark() {
         {/* Table */}
         <div className="admin-payments-table-container">
           {loading ? (
-            <div className="admin-payments-loading">
-              <div className="admin-payments-loading-spinner"></div>
-              <p>Loading student data...</p>
-            </div>
+            <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
           ) : filteredRows.length === 0 ? (
             <div className="admin-payments-empty">
               <div className="admin-payments-empty-icon">📋</div>

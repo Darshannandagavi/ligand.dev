@@ -184,7 +184,20 @@ export default App;`,
         </div>
       </div>
 
-      <div
+        <div style={{ margin: "35px 0" }}>
+              <iframe
+                width="100%"
+                height="515"
+                src="https://youtu.be/b3GZzWwjPDA?si=W7NSipXlJ-12MEDx"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: "8px" }}
+              ></iframe>
+            </div>
+
+      {/* <div
         style={{
           position: "relative",
           width: "100%",
@@ -250,7 +263,7 @@ export default App;`,
         >
           Video content is protected. Downloading is disabled.
         </div>
-      </div>
+      </div> */}
 
       <div className="company-info">
         <h2>LIGAND SOFTWARE SOLUTIONS</h2>

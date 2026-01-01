@@ -393,7 +393,7 @@ export default Items;`,
               <iframe
                 width="100%"
                 height="515"
-                src="https://www.youtube.com/embed/fh5xkzS58h0"
+                src="https://youtu.be/fh5xkzS58h0?si=WYGb-QOaiw-1WrFR"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

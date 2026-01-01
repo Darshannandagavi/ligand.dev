@@ -3,6 +3,7 @@ import axios from "axios";
 import { FaCoins, FaRegMoneyBillAlt, FaUser } from "react-icons/fa";
 import { MdGroups2, MdOutlineGroupAdd } from "react-icons/md";
 import { SiSinglestore } from "react-icons/si";
+import Loader from "../StyleComponents/Loader";
 
 export default function AdminGroupingPage() {
   const [groups, setGroups] = useState([]);
@@ -217,10 +218,7 @@ export default function AdminGroupingPage() {
 
         {/* Loading State */}
         {loading ? (
-          <div className="admin-grouping-loading">
-            <div className="admin-grouping-loading-spinner"></div>
-            <p>Loading group data...</p>
-          </div>
+          <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
         ) : (
           <>
             {/* Grouped Students */}

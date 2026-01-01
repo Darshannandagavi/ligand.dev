@@ -384,6 +384,7 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Loader from '../StyleComponents/Loader';
 
 const AdminPayments = () => {
   const [collegeOptions, setCollegeOptions] = useState([]);
@@ -741,10 +742,7 @@ const AdminPayments = () => {
 
           <div className="students-list">
             {loading ? (
-              <div className="loading-state">
-                <div className="spinner"></div>
-                <p>Loading students...</p>
-              </div>
+              <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
             ) : students.length === 0 ? (
               <div className="empty-state">
                 <div className="empty-icon">👨‍🎓</div>

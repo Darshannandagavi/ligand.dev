@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import {
-  Box,
   Grid,
   Card,
   CardContent,
@@ -14,7 +13,6 @@ import {
   TableRow,
   Paper,
   Chip,
-  CircularProgress,
   Alert,
   Button,
   Dialog,
@@ -40,6 +38,7 @@ import {
   ResponsiveContainer
 } from 'recharts';
 import SearchIcon from '@mui/icons-material/Search';
+import Loader from '../StyleComponents/Loader';
 
 const AdminNewDashboard = () => {
   const [loading, setLoading] = useState(true);
@@ -210,10 +209,7 @@ const AdminNewDashboard = () => {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
 
   if (loading) return (
-    <div className="loading-container">
-      <CircularProgress />
-      <p className="loading-text">Loading Dashboard...</p>
-    </div>
+    <div style={{minHeight:"100vh",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
   );
 
   return (

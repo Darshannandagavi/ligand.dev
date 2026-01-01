@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Loader from "../StyleComponents/Loader";
 
 export default function ManageExam() {
   const [exams, setExams] = useState([]);
@@ -24,6 +25,7 @@ export default function ManageExam() {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [viewingExam, setViewingExam] = useState(null);
   const [isViewModalOpen, setIsViewModalOpen] = useState(false);
+  const [loading,setloading]=useState(false);
 
   // Initialize AOS
   useEffect(() => {
@@ -37,12 +39,15 @@ export default function ManageExam() {
   // Fetch all exams
   const fetchExams = async () => {
     try {
+      setloading(true);
       const res = await axios.get(
         "https://ligand-dev-7.onrender.com/api/exams/examsforadmin"
       );
       setExams(res.data);
       setFilteredExams(res.data);
+      setloading(false);
     } catch (err) {
+      setloading(false);
       console.error(err);
     }
   };
@@ -387,7 +392,8 @@ export default function ManageExam() {
           {filteredExams.length} {filter === "all" ? "" : filter} Exam(s) Found
         </h2>
 
-        {filteredExams.length === 0 ? (
+        {loading && <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>}
+        {(!loading && filteredExams.length === 0) ? (
           <div className="no-exams" data-aos="fade-up">
             <h3>No exams found</h3>
             <p>Create your first exam to get started!</p>

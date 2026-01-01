@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MdOutlineSpaceDashboard } from "react-icons/md";
+import Loader from "../StyleComponents/Loader";
 
 const API = "https://ligand-dev-7.onrender.com/api";
 
@@ -124,10 +125,7 @@ export default function StudentAnalytics() {
 
   if (loading) {
     return (
-      <div className="student-analytics-loader">
-        <div className="student-analytics-spinner"></div>
-        <p>Loading your analytics dashboard...</p>
-      </div>
+      <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
     );
   }
 

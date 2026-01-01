@@ -3,6 +3,7 @@ import axios from "axios";
 import { AiFillDelete } from "react-icons/ai";
 import { BiSolidMessageSquareEdit } from "react-icons/bi";
 import { RiSettings4Fill } from "react-icons/ri";
+import Loader from "../StyleComponents/Loader";
 
 const AdminOptions = () => {
   const [options, setOptions] = useState({
@@ -195,10 +196,7 @@ const AdminOptions = () => {
 
       {/* Options Lists */}
       {loading ? (
-        <div className="loading-container">
-          <div className="spinner"></div>
-          <p>Loading options...</p>
-        </div>
+        <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
       ) : (
         <div className="options-grid">
           {Object.keys(options).map((type) => (

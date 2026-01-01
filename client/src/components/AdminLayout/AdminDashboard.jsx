@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import axios from "axios";
 import "./AdminDashboard.css";
+import Loader from "../StyleComponents/Loader";
 
 const AdminDashboard = () => {
   const [students, setStudents] = useState([]);
@@ -328,7 +329,7 @@ const AdminDashboard = () => {
           {filteredStudents.length > 0 && ` (${filteredStudents.length})`}
         </h3>
         {loading ? (
-          <div className="loading-state">Loading...</div>
+          <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
         ) : (
           <div className="student-grid">
             {filteredStudents.map(renderStudentCard)}

@@ -41,6 +41,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loader from "../StyleComponents/Loader";
 
 const Notes = ({ user }) => {
   const [notes, setNotes] = useState([]);
@@ -95,7 +96,6 @@ const Notes = ({ user }) => {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
       gap: "24px",
-      maxWidth: "1200px",
       margin: "0 auto"
     },
     card: {
@@ -247,11 +247,7 @@ const Notes = ({ user }) => {
 
   if (loading) {
     return (
-      <div style={styles.container}>
-        <div style={styles.loadingContainer}>
-          <div style={styles.spinner}></div>
-        </div>
-      </div>
+      <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
     );
   }
 

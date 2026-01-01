@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../StyleComponents/Loader";
 
 export default function AttendExam() {
   const [exams, setExams] = useState([]);
@@ -245,7 +246,7 @@ const stopCamera = () => {
             justifyContent: "center",
           }}
         >
-          <div className="spinner"></div>
+          <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
           <p className="mt-3">Loading exams...</p>
         </div>
       </div>

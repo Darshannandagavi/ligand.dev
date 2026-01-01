@@ -17,6 +17,7 @@ import {
   PointElement,
   LineElement,
 } from "chart.js";
+import Loader from "../StyleComponents/Loader";
 
 Chart.register(
   CategoryScale,
@@ -196,6 +197,7 @@ export default function ExamHistory() {
     return (
       <div className="exam-history-container">
         <div className="exam-history-card">
+          <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
           <div className="loading">Loading exam history... ⏳</div>
         </div>
       </div>

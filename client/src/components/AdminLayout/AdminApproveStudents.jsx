@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../StyleComponents/Loader";
 
 export default function AdminApproveStudents() {
   const [students, setStudents] = useState([]);
@@ -115,10 +116,7 @@ export default function AdminApproveStudents() {
   const pendingCount = students.filter(s => !s.isApproved).length;
 
   if (loading) return (
-    <div className="loading-container">
-      <div className="loading-spinner"></div>
-      <p>Loading students...</p>
-    </div>
+    <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
   );
 
   return (

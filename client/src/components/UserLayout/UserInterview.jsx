@@ -1,6 +1,7 @@
 import React, { useState,  useEffect } from "react";
 import axios from "axios";
 import "./InterviewPage.css";
+import Loader from "../StyleComponents/Loader";
 
 const API_BASE = "https://ligand-dev-7.onrender.com/api"; 
 const GROQ_API_KEY = process.env.REACT_APP_GROQ_API_KEY || "";
@@ -57,18 +58,20 @@ const InterviewPage = () => {
   const [weaknesses, setWeaknesses] = useState("");
   const [voices, setVoices] = useState([]);
   const [typedAnswer, setTypedAnswer] = useState("");
-
+  const [loading,setLoading]=useState(false);
   const user = localStorage.getItem("username") || "Candidate";
   
 
   // Fetch topics from backend
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`${API_BASE}/topics`)
       .then((res) => {
         if (res.data.success) setTopics(res.data.data);
+        setLoading(false);
       })
-      .catch((err) => console.error("Fetch topics error:", err));
+      .catch((err) => {console.error("Fetch topics error:", err);setLoading(false);});
   }, []);
 
   // Load voices
@@ -248,7 +251,7 @@ const InterviewPage = () => {
             value={selectedTopic}
             onChange={(e) => setSelectedTopic(e.target.value)}
           >
-            <option value="">-- Select a Topic --</option>
+            <option value="">{loading?"loading topics":"-- Select a Topic --"}</option>
             {topics.map((t) => (
               <option key={t._id} value={t._id}>
                 {t.name}

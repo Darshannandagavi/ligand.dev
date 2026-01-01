@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../StyleComponents/Loader";
 
 const AdminNotesControl = () => {
   const [notes, setNotes] = useState([]);
@@ -335,9 +336,7 @@ const AdminNotesControl = () => {
         <h3 style={{ ...styles.formTitle, marginLeft: "8px" }}>All Chapters</h3>
         
         {loading ? (
-          <div style={styles.loadingContainer}>
-            <div style={styles.spinner}></div>
-          </div>
+          <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
         ) : notes.length === 0 ? (
           <div style={styles.emptyState}>
             <div style={styles.emptyIcon}>📚</div>

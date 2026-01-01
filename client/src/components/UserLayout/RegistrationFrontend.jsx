@@ -1309,7 +1309,18 @@ export default Register;`,
                   <p>Modern Login Form Design</p>
                 </div>
               </div>
-
+              <div style={{ margin: "35px 0" }}>
+              <iframe
+                width="100%"
+                height="515"
+                src="https://youtu.be/hBd90XFh2U8?si=AmxhK9BQnzLWl2tW"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: "8px" }}
+              ></iframe>
+            </div>
               <div
                 style={{
                   position: "relative",

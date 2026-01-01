@@ -12,6 +12,7 @@ import {
 } from "react-icons/fa";
 import jsPDF from "jspdf";
 import autoTable from "jspdf-autotable";
+import Loader from "../StyleComponents/Loader";
 
 const AdminAttendance = () => {
   const [collegeOptions, setCollegeOptions] = useState([]);
@@ -705,10 +706,7 @@ const AdminAttendance = () => {
               {/* Students List */}
               <form onSubmit={handleSubmit}>
                 {loading ? (
-                  <div className="loading-state">
-                    <div className="spinner"></div>
-                    <p>Loading students...</p>
-                  </div>
+                  <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
                 ) : (
                   <div className="students-list">
                     {filteredStudents.length === 0 ? (

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useMemo } from "react";
 import axios from "axios";
 import {jsPDF} from "jspdf";
 import html2canvas from "html2canvas";
+import Loader from "../StyleComponents/Loader";
 
 window.jspdf = { jsPDF };
 window.html2canvas = html2canvas;
@@ -281,12 +282,7 @@ const AdminStudentDashboard = () => {
   // Render loading state
   if (loading) {
     return (
-      <div className="admin-dashboard-loading-container">
-        <div className="admin-dashboard-spinner-wrapper">
-          <div className="admin-dashboard-spinner"></div>
-          <p className="admin-dashboard-loading-text">Loading students data...</p>
-        </div>
-      </div>
+      <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
     );
   }
 
@@ -574,10 +570,7 @@ const AdminStudentDashboard = () => {
 
             <div className="admin-dashboard-details-panel-body">
               {detailsLoading || selectedStudent.loading ? (
-                <div className="admin-dashboard-details-loading">
-                  <div className="admin-dashboard-details-spinner"></div>
-                  <p>Loading student analytics...</p>
-                </div>
+                <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
               ) : (
                 <>
                   {/* Quick Stats */}

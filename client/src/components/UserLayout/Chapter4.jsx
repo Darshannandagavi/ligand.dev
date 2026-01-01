@@ -950,7 +950,20 @@ return <h1>Hello, {name}!</h1>;`}</pre>
             </div>
           </div>
 
-          <div
+          <div style={{ margin: "35px 0" }}>
+              <iframe
+                width="100%"
+                height="515"
+                src="https://youtu.be/Ix21FjiDcro?si=kbLXh3tHvoEYIzCH"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: "8px" }}
+              ></iframe>
+            </div>
+
+          {/* <div
             style={{
               position: "relative",
               width: "100%",
@@ -1016,7 +1029,7 @@ return <h1>Hello, {name}!</h1>;`}</pre>
             >
              Create Registration Form.
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Loader from "../StyleComponents/Loader";
 
 export default function ManageExamAndNoteVisibility() {
   const [exams, setExams] = useState([]);
@@ -71,10 +72,7 @@ export default function ManageExamAndNoteVisibility() {
 
   if (loading) {
     return (
-      <div className="loading-container">
-        <div className="spinner"></div>
-        <p>Loading exams and notes...</p>
-      </div>
+      <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
     );
   }
 

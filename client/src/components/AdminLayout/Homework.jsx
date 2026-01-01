@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import Loader from "../StyleComponents/Loader";
 
 const Homework = () => {
   const [homeworks, setHomeworks] = useState([]);
@@ -531,7 +532,7 @@ const Homework = () => {
               >
                 {isLoading ? (
                   <>
-                    <span className="loading-spinner"></span>
+                    <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
                     {editingId ? "Updating..." : "Adding..."}
                   </>
                 ) : (

@@ -27,6 +27,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar, Pie } from 'react-chartjs-2';
+import Loader from "../StyleComponents/Loader";
 
 // Register ChartJS components
 ChartJS.register(
@@ -90,12 +91,15 @@ export default function AdminExamAttempts() {
   useEffect(() => {
     async function fetchExams() {
       try {
+        setLoading(true);
         const res = await axios.get(
           "https://ligand-dev-7.onrender.com/api/exams/examsforadmin"
         );
         setExams(res.data);
+        setLoading(false);
       } catch (err) {
         console.error(err);
+        setLoading(false);
       }
     }
     fetchExams();
@@ -496,10 +500,7 @@ export default function AdminExamAttempts() {
         <h3 data-aos="fade-up">Student Attempts</h3>
 
         {loading ? (
-          <div className="loading" data-aos="fade-up">
-            <div className="spinner"></div>
-            <p>Loading attempts...</p>
-          </div>
+          <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
         ) : filteredAttempts.length === 0 ? (
           <div className="no-data" data-aos="fade-up">
             <p>{searchTerm ? "No matching attempts found." : "No student attempts for this exam yet."}</p>
@@ -635,8 +636,8 @@ export default function AdminExamAttempts() {
       </div>
       
       <h2 data-aos="fade-up">All Exams (Admin View)</h2>
-      
-      {exams.length === 0 ? (
+      {loading ? <div style={{minHeight:"200px",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>:null}
+      {!loading && exams.length === 0 ? (
         <div className="no-data" data-aos="fade-up">
           <p>No exams found.</p>
         </div>
