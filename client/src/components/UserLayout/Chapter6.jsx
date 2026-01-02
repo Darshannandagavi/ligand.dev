@@ -2518,7 +2518,7 @@ export default GuestLayout;`,
               <iframe
                 width="100%"
                 height="515"
-                src="https://youtu.be/J1wBCfjgsH0?si=rASuB6KkqaagbrJy"
+                src="https://www.youtube.com/embed/J1wBCfjgsH0?si=2SXyJ1SaOlo21I14"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1313,7 +1313,7 @@ export default Register;`,
               <iframe
                 width="100%"
                 height="515"
-                src="https://youtu.be/hBd90XFh2U8?si=AmxhK9BQnzLWl2tW"
+                src="https://www.youtube.com/embed/BYfOSd8xyTs?si=o8mQrf3bmMWMntqr"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -1321,72 +1321,7 @@ export default Register;`,
                 style={{ borderRadius: "8px" }}
               ></iframe>
             </div>
-              <div
-                style={{
-                  position: "relative",
-                  width: "100%",
-                  maxWidth: "800px",
-                  margin: "2rem auto",
-                  borderRadius: "12px",
-                  overflow: "hidden",
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-                  backgroundColor: "#000",
-                }}
-              >
-                <div
-                  onContextMenu={(e) => e.preventDefault()}
-                  style={{ position: "relative" }}
-                >
-                  <video
-                    style={{
-                      width: "100%",
-                      height: "auto",
-                      display: "block",
-                      outline: "none",
-                      userSelect: "none",
-                      WebkitUserSelect: "none",
-                    }}
-                    controls
-                    controlsList="nodownload noremoteplayback"
-                    disablePictureInPicture
-                    disableRemotePlayback
-                    preload="metadata"
-                    poster=""
-                    onKeyDown={(e) => {
-                      if (e.ctrlKey && (e.key === "s" || e.key === "S")) {
-                        e.preventDefault();
-                      }
-                    }}
-                  >
-                    <source src="/LoginFrontend.mp4" type="video/mp4" />
-                  </video>
-
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      width: "100%",
-                      height: "100%",
-                      pointerEvents: "none",
-                      zIndex: 1,
-                    }}
-                  />
-                </div>
-
-                <div
-                  style={{
-                    padding: "1rem",
-                    backgroundColor: "#f8f9fa",
-                    color: "#333",
-                    fontSize: "0.9rem",
-                    textAlign: "center",
-                    borderTop: "1px solid #eaeaea",
-                    userSelect: "none",
-                  }}
-                >
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>

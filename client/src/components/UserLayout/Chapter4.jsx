@@ -954,7 +954,7 @@ return <h1>Hello, {name}!</h1>;`}</pre>
               <iframe
                 width="100%"
                 height="515"
-                src="https://youtu.be/Ix21FjiDcro?si=kbLXh3tHvoEYIzCH"
+                src="https://www.youtube.com/embed/Ix21FjiDcro?si=d4km200zufJR90oc"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

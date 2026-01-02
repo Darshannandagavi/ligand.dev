@@ -649,7 +649,7 @@ reportWebVitals();`,
               <iframe
                 width="100%"
                 height="515"
-                src="https://youtu.be/Qo8yn_QDoD0?si=BqT6MGS1HiKb2alB"
+                src="https://www.youtube.com/embed/Qo8yn_QDoD0?si=xxg_KjWy-LoHNeNS"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

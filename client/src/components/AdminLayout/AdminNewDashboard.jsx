@@ -209,7 +209,9 @@ const AdminNewDashboard = () => {
   const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
 
   if (loading) return (
-    <div style={{minHeight:"100vh",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
+    <div>
+      <div style={{minHeight:"100vh",height:"100%",width:"100%",display:"flex",alignItems:"center",justifyContent:"center"}}><Loader/></div>
+    </div>
   );
 
   return (

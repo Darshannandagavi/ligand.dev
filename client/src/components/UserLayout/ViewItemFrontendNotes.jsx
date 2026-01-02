@@ -547,60 +547,35 @@ export default ViewItem;`,
                 </p>
               </div>
             </div>
+            <div className="reference-section">
+              <h4>Expected output</h4>
 
-            <div
-              style={{
-                position: "relative",
-                width: "100%",
-                maxWidth: "800px",
-                margin: "2rem auto",
-                borderRadius: "12px",
-                overflow: "hidden",
-                boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-                backgroundColor: "#000",
-              }}
-            >
-              <div
-                onContextMenu={(e) => e.preventDefault()}
-                style={{ position: "relative" }}
-              >
-                <video
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                    outline: "none",
-                    userSelect: "none",
-                    WebkitUserSelect: "none",
-                  }}
-                  controls
-                  controlsList="nodownload noremoteplayback"
-                  disablePictureInPicture
-                  disableRemotePlayback
-                  preload="metadata"
-                  poster=""
-                  onKeyDown={(e) => {
-                    if (e.ctrlKey && (e.key === "s" || e.key === "S")) {
-                      e.preventDefault();
-                    }
-                  }}
-                >
-                  <source src="/EmployeeDetailsFetch.mp4" type="video/mp4" />
-                </video>
-
-                <div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    width: "100%",
-                    height: "100%",
-                    pointerEvents: "none",
-                    zIndex: 1,
-                  }}
-                />
+              <div className="reference-grid">
+                <div className="reference-item">
+                  <div className="image-container">
+                    <img
+                      src="/homeWork/home_login_page.png"
+                      alt="Login Page Example 1"
+                    />
+                  </div>
+                  <p>Modern Login Form Design</p>
+                </div>
               </div>
+              <div style={{ margin: "35px 0" }}>
+              <iframe
+                width="100%"
+                height="515"
+                src="https://www.youtube.com/embed/5twZ6Ym-n6I?si=MVYbwBm5vK6bvqQz"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: "8px" }}
+              ></iframe>
             </div>
+              
+            </div>
+            
           </div>
         </div>
       </div>

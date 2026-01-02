@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const LoginFrontend = () => {
   const [copiedIndex, setCopiedIndex] = useState(null);
@@ -212,13 +211,15 @@ const LoginFrontend = () => {
     {
       title: "Step 1: Create Login Component",
       content: "Create new file Login.jsx file in components folder",
-      explanation: "This file will contain the login form component that allows users to authenticate and access their accounts.",
-      image: "/CreateLoginComponent.png"
+      explanation:
+        "This file will contain the login form component that allows users to authenticate and access their accounts.",
+      image: "/CreateLoginComponent.png",
     },
     {
       title: "Complete Login Component Code",
       content: "Below is the complete code for the login component:",
-      explanation: "This component handles user authentication with form validation, API communication, and redirects users after successful login.",
+      explanation:
+        "This component handles user authentication with form validation, API communication, and redirects users after successful login.",
       code: `import React, { useState } from "react";
 import axios from "axios";
 import { Container, Row, Col, Form, Button, Alert, Card } from 'react-bootstrap';
@@ -344,80 +345,93 @@ const Login = () => {
   );
 };
 
-export default Login;`
+export default Login;`,
     },
     {
       title: "Import Statements Explanation",
       content: "Understanding the import statements in the login component:",
-      explanation: "These imports bring in the necessary libraries and components needed for the login form to function properly.",
+      explanation:
+        "These imports bring in the necessary libraries and components needed for the login form to function properly.",
       points: [
         {
           term: "React + useState",
-          explanation: "React is required for JSX. useState hook manages component state."
+          explanation:
+            "React is required for JSX. useState hook manages component state.",
         },
         {
           term: "axios",
-          explanation: "Used for sending login data (email, password) to the backend API."
+          explanation:
+            "Used for sending login data (email, password) to the backend API.",
         },
         {
           term: "react-bootstrap components",
-          explanation: "Container, Row, Col, Form, Button, Alert, Card → pre-styled UI elements."
+          explanation:
+            "Container, Row, Col, Form, Button, Alert, Card → pre-styled UI elements.",
         },
         {
           term: "useNavigate (React Router)",
-          explanation: "Special hook to programmatically redirect users to another page after login."
-        }
+          explanation:
+            "Special hook to programmatically redirect users to another page after login.",
+        },
       ],
-      image: "/Import Statements Explanations.png"
+      image: "/Import Statements Explanations.png",
     },
     {
       title: "Component Declaration",
-      content: "The component is defined as a functional component using arrow function syntax.",
-      explanation: "This is the modern way to declare React components and provides a clean, concise syntax.",
-      image: "/Component Declarations.png"
+      content:
+        "The component is defined as a functional component using arrow function syntax.",
+      explanation:
+        "This is the modern way to declare React components and provides a clean, concise syntax.",
+      image: "/Component Declarations.png",
     },
     {
       title: "State Management with useState",
-      content: "The component uses multiple useState hooks to manage different aspects of state.",
-      explanation: "Each useState hook manages a specific piece of the component's state, allowing for controlled form inputs and user feedback.",
+      content:
+        "The component uses multiple useState hooks to manage different aspects of state.",
+      explanation:
+        "Each useState hook manages a specific piece of the component's state, allowing for controlled form inputs and user feedback.",
       states: [
         {
           name: "formData",
-          purpose: "Stores the values from input fields (email, password)"
+          purpose: "Stores the values from input fields (email, password)",
         },
         {
           name: "message",
-          purpose: "Holds success or error messages to show to the user"
+          purpose: "Holds success or error messages to show to the user",
         },
         {
           name: "validated",
-          purpose: "Tracks if the form has been validated"
+          purpose: "Tracks if the form has been validated",
         },
         {
           name: "isLoading",
-          purpose: "Shows loading text on the button while waiting for API response"
+          purpose:
+            "Shows loading text on the button while waiting for API response",
         },
         {
           name: "navigate",
-          purpose: "Function from useNavigate used to redirect users (e.g., to /user)"
-        }
+          purpose:
+            "Function from useNavigate used to redirect users (e.g., to /user)",
+        },
       ],
-      image: "/login State Management with useState.png"
+      image: "/login State Management with useState.png",
     },
     {
       title: "Handle Change Function",
       content: "The handleChange function updates form data as the user types.",
-      explanation: "This function runs whenever the user types in an input box, updating the corresponding state value.",
+      explanation:
+        "This function runs whenever the user types in an input box, updating the corresponding state value.",
       breakdown: [
         "...formData: Keeps previous data",
-        "[e.target.name]: e.target.value: Updates only the field being typed"
+        "[e.target.name]: e.target.value: Updates only the field being typed",
       ],
-      image: "/login handle change.png"
+      image: "/login handle change.png",
     },
     {
       title: "Handle Submit Function",
       content: "The handleSubmit function processes the form submission.",
-      explanation: "This function handles form validation, API communication, user redirection, and state updates based on the response.",
+      explanation:
+        "This function handles form validation, API communication, user redirection, and state updates based on the response.",
       code: `const handleSubmit = async (e) => {
   e.preventDefault();
   const form = e.currentTarget;
@@ -452,13 +466,14 @@ export default Login;`
         "axios.post(...): Sends login request to backend API with email + password",
         "On success: Shows success message, saves user details locally, redirects to /user page, and resets form fields",
         "On error: Shows error message (e.g., 'Invalid credentials')",
-        "finally: Turns off loading state regardless of outcome"
+        "finally: Turns off loading state regardless of outcome",
       ],
     },
     {
       title: "JSX Structure - Container, Row, and Col",
       content: "The component uses Bootstrap's grid system for layout.",
-      explanation: "These components create a responsive layout that works well on different screen sizes.",
+      explanation:
+        "These components create a responsive layout that works well on different screen sizes.",
       code: `<Container className="mt-5">
   <Row className="justify-content-center">
     <Col md={6} lg={5}>
@@ -469,13 +484,14 @@ export default Login;`
       purpose: [
         "Container: Wraps everything neatly with margin-top",
         "Row + Col: Bootstrap grid → centers form and makes it responsive",
-        "Card: Provides a nice box for the login form"
+        "Card: Provides a nice box for the login form",
       ],
     },
     {
       title: "Heading and Introduction",
       content: "The form includes a heading and introductory text.",
-      explanation: "This provides context to the user about what the form is for and what they need to do.",
+      explanation:
+        "This provides context to the user about what the form is for and what they need to do.",
       code: `<div className="text-center mb-4">
   <h2 className="fw-bold text-primary">Welcome Back</h2>
   <p className="text-muted">Please sign in to your account</p>
@@ -484,7 +500,8 @@ export default Login;`
     {
       title: "Alert Component for Messages",
       content: "The component uses Alert to display success or error messages.",
-      explanation: "This provides visual feedback to the user about the outcome of their form submission.",
+      explanation:
+        "This provides visual feedback to the user about the outcome of their form submission.",
       code: `{message && (
   <Alert variant={message.type} className="mb-3">
     {message.text}
@@ -494,18 +511,20 @@ export default Login;`
     {
       title: "Form Properties",
       content: "The Form component has several important properties.",
-      explanation: "These properties control form validation and submission behavior.",
+      explanation:
+        "These properties control form validation and submission behavior.",
       code: `<Form noValidate validated={validated} onSubmit={handleSubmit}>`,
       properties: [
         "noValidate: Disables browser default validation",
         "validated: Connects with Bootstrap's validation UI",
-        "onSubmit: Calls handleSubmit when user submits form"
+        "onSubmit: Calls handleSubmit when user submits form",
       ],
     },
     {
       title: "Email Input Field",
       content: "The form includes an email input field with validation.",
-      explanation: "This field captures the user's email address and validates it for proper email format.",
+      explanation:
+        "This field captures the user's email address and validates it for proper email format.",
       code: `<Form.Group className="mb-3">
   <Form.Label>Email Address</Form.Label>
   <Form.Control
@@ -524,13 +543,14 @@ export default Login;`
         "type='email': Ensures only valid emails are accepted",
         "value + onChange: Controlled component (value comes from state)",
         "required: Field cannot be empty",
-        "Feedback: Error message shown if invalid"
+        "Feedback: Error message shown if invalid",
       ],
     },
     {
       title: "Password Input Field",
       content: "The form includes a password input field with validation.",
-      explanation: "This field captures the user's password and includes a forgot password link.",
+      explanation:
+        "This field captures the user's password and includes a forgot password link.",
       code: `<Form.Group className="mb-4">
   <Form.Label>Password</Form.Label>
   <Form.Control
@@ -551,13 +571,14 @@ export default Login;`
       features: [
         "type='password': Hidden characters input",
         "required: Field cannot be empty",
-        "Forgot password link: Helps user recover account"
+        "Forgot password link: Helps user recover account",
       ],
     },
     {
       title: "Submit Button",
       content: "The form includes a submit button with loading state.",
-      explanation: "The button changes text and becomes disabled during form submission to prevent multiple clicks.",
+      explanation:
+        "The button changes text and becomes disabled during form submission to prevent multiple clicks.",
       code: `<div className="d-grid">
   <Button
     variant="primary"
@@ -570,34 +591,40 @@ export default Login;`
 </div>`,
       features: [
         "disabled={isLoading}: Prevents multiple clicks",
-        "Conditional text: Shows 'Signing In...' while API request is running"
+        "Conditional text: Shows 'Signing In...' while API request is running",
       ],
     },
     {
       title: "Registration Link",
-      content: "The form includes a link to the registration page for new users.",
-      explanation: "This provides a convenient way for users who don't have accounts to navigate to the registration page.",
+      content:
+        "The form includes a link to the registration page for new users.",
+      explanation:
+        "This provides a convenient way for users who don't have accounts to navigate to the registration page.",
       code: `<div className="text-center mt-3">
   <p className="text-muted">
     Don't have an account? <a href="/register" className="text-decoration-none">Sign up</a>
   </p>
 </div>`,
-      purpose: "Suggests going to the Register page if user doesn't have an account",
+      purpose:
+        "Suggests going to the Register page if user doesn't have an account",
     },
     {
       title: "Final look of Login Component",
-      content: "Congratulations! You have successfully created a responsive login form using React and Bootstrap.",
-      image: "/login.png"
+      content:
+        "Congratulations! You have successfully created a responsive login form using React and Bootstrap.",
+      image: "/login.png",
     },
     {
       title: "If login successful",
-      content: "If the login is successful, the user will be redirected to the user page.",
-      image: "/user page.png"
+      content:
+        "If the login is successful, the user will be redirected to the user page.",
+      image: "/user page.png",
     },
     {
       title: "🧠 Home Work",
       content: "Create Admin Login Component",
-      explanation: "Now that you've successfully created a user login component, your homework is to create a similar login component specifically for administrators.",
+      explanation:
+        "Now that you've successfully created a user login component, your homework is to create a similar login component specifically for administrators.",
       instructions: [
         "Create a new file called AdminLogin.jsx in the adminLayout folder",
         "Use the same structure as the regular login component",
@@ -605,26 +632,27 @@ export default Login;`
         "After successful login, redirect admin users to '/admin/dashboard'",
         "Add admin-specific styling or branding to differentiate it from the user login",
         "Include proper validation and error handling for admin credentials",
-        "Add a secure logout functionality for admin users"
+        "Add a secure logout functionality for admin users",
       ],
       features: [
         "Admin-specific authentication endpoint",
         "Redirect to admin dashboard on success",
         "Admin role validation",
         "Enhanced security features",
-        "Professional admin interface design"
-      ]
-    }
+        "Professional admin interface design",
+      ],
+    },
   ];
 
   return (
     <div style={styles.container}>
       <div style={styles.header}>
         <h1 style={styles.headerH1}>Login Frontend Guide</h1>
-        <p style={styles.headerP}>Follow these steps to create a responsive login form with React and Bootstrap</p>
+        <p style={styles.headerP}>
+          Follow these steps to create a responsive login form with React and
+          Bootstrap
+        </p>
       </div>
-
-
 
       <div style={styles.sectionsContainer}>
         {steps.map((step, index) => (
@@ -670,7 +698,9 @@ export default Login;`
                 <h4 style={styles.listH4}>Breakdown:</h4>
                 <ul style={styles.listUl}>
                   {step.breakdown.map((item, i) => (
-                    <li key={i} style={styles.listLi}>{item}</li>
+                    <li key={i} style={styles.listLi}>
+                      {item}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -682,7 +712,9 @@ export default Login;`
                 {Array.isArray(step.purpose) ? (
                   <ul style={styles.listUl}>
                     {step.purpose.map((item, i) => (
-                      <li key={i} style={styles.listLi}>{item}</li>
+                      <li key={i} style={styles.listLi}>
+                        {item}
+                      </li>
                     ))}
                   </ul>
                 ) : (
@@ -696,7 +728,9 @@ export default Login;`
                 <h4 style={styles.listH4}>Features:</h4>
                 <ul style={styles.listUl}>
                   {step.features.map((feature, i) => (
-                    <li key={i} style={styles.listLi}>{feature}</li>
+                    <li key={i} style={styles.listLi}>
+                      {feature}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -707,7 +741,9 @@ export default Login;`
                 <h4 style={styles.listH4}>Properties:</h4>
                 <ul style={styles.listUl}>
                   {step.properties.map((property, i) => (
-                    <li key={i} style={styles.listLi}>{property}</li>
+                    <li key={i} style={styles.listLi}>
+                      {property}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -718,7 +754,9 @@ export default Login;`
                 <h4 style={styles.instructionsH4}>Instructions:</h4>
                 <ul style={styles.listUl}>
                   {step.instructions.map((instruction, i) => (
-                    <li key={i} style={styles.listLi}>{instruction}</li>
+                    <li key={i} style={styles.listLi}>
+                      {instruction}
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -734,84 +772,44 @@ export default Login;`
                   }}
                   onClick={() => copyToClipboard(step.code, index)}
                 >
-                  {copiedIndex === index ? 'Copied!' : 'Copy'}
+                  {copiedIndex === index ? "Copied!" : "Copy"}
                 </button>
               </div>
             )}
 
             {step.image && (
               <div style={styles.imageContainer}>
-                <p style={styles.imageCaption}>
-                  Image: {step.image}
-                </p>
+                <p style={styles.imageCaption}>Image: {step.image}</p>
                 <img
                   src={step.image}
                   alt={step.title}
                   style={styles.image}
                   onError={(e) => {
-                    e.target.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZWVlZWVlIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIj5JbWFnZSBQbGFjZWhvbGRlcjwvdGV4dD48L3N2Zz4=";
+                    e.target.src =
+                      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZWVlZWVlIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZmlsbD0iIzk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zNWVtIj5JbWFnZSBQbGFjZWhvbGRlcjwvdGV4dD48L3N2Zz4=";
                   }}
                 />
               </div>
             )}
           </div>
         ))}
-        <div
-        style={{
-          position: "relative",
-          width: "100%",
-          maxWidth: "800px",
-          margin: "2rem auto",
-          borderRadius: "12px",
-          overflow: "hidden",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.15)",
-          backgroundColor: "#000",
-        }}
-      >
-        <div
-          onContextMenu={(e) => e.preventDefault()}
-          style={{ position: "relative" }}
-        >
-          <video
-            style={{
-              width: "100%",
-              height: "auto",
-              display: "block",
-              outline: "none",
-              userSelect: "none",
-              WebkitUserSelect: "none",
-            }}
-            controls
-            controlsList="nodownload noremoteplayback"
-            disablePictureInPicture
-            disableRemotePlayback
-            preload="metadata"
-            poster=""
-            onKeyDown={(e) => {
-              if (e.ctrlKey && (e.key === "s" || e.key === "S")) {
-                e.preventDefault();
-              }
-            }}
-          >
-            <source src="/loginFrontend.mp4" type="video/mp4" />
-          </video>
-
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              pointerEvents: "none",
-              zIndex: 1,
-            }}
-          />
-        </div>
-
-        
-      </div>
-
+        <div className="reference-section">
+              
+              
+              <div style={{ margin: "35px 0" }}>
+              <iframe
+                width="100%"
+                height="515"
+                src="https://www.youtube.com/embed/BYfOSd8xyTs?si=o8mQrf3bmMWMntqr"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ borderRadius: "8px" }}
+              ></iframe>
+            </div>
+              
+            </div>
       </div>
       <div style={styles.companyInfo}>
         <h2 style={styles.companyH2}>LIGAND SOFTWARE SOLUTIONS</h2>
@@ -823,7 +821,10 @@ export default Login;`
       </div>
 
       <div style={styles.footer}>
-        <p style={styles.footerP}>Join us for Programming, Coding, Project Training and Internship opportunities.</p>
+        <p style={styles.footerP}>
+          Join us for Programming, Coding, Project Training and Internship
+          opportunities.
+        </p>
         <p style={styles.footerP}>Let's learn, code and build together.</p>
       </div>
     </div>

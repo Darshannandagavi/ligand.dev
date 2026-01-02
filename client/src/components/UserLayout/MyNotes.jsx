@@ -188,7 +188,7 @@ export default App;`,
               <iframe
                 width="100%"
                 height="515"
-                src="https://youtu.be/b3GZzWwjPDA?si=W7NSipXlJ-12MEDx"
+                src="https://www.youtube.com/embed/b3GZzWwjPDA?si=SD8bKD6g_nW_a5KB"
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
