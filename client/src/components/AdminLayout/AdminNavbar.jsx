@@ -340,13 +340,11 @@ const AdminNavbar = () => {
         .logo-image {
           height: 40px;
           width: 40px;
-          object-fit: contain;
-          animation: pulse 2s infinite, float 3s ease-in-out infinite;
+          object-fit: cover;
           border-radius: 50%;
           background: rgba(255, 255, 255, 0.1);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.2);
-          padding: 5px;
+          
         }
 
         .logo-text-container {
